@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <style>
+
+        :root {
+            --shadow: 0 1px 5px rgba(211, 206, 206, 0.8);
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Lato', sans-serif;
+            background: url('blur-colorful-colourful-21492.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            
+            
+            
+        }
+
+        .wrapper .form {
+            width: 100%;
+            box-sizing: border-box;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .form input {
+            padding: 1.1rem;
+            width: 100%;
+            border-radius: 15px;
+            border: 0.1rem solid #ccc;
+            outline: none;
+            font-size: 1.5rem;
+            font-family: 'Lato', sans-serif;
+            box-shadow: var(--shadow);
+            background:  rgba(0, 0, 0,0.85);
+            color: #fff;
+        }
+
+        .btn-wrapper {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            width: 100%;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .arrow {
+            font-size: 2rem;
+        }
+
+        .button {
+            padding: 1.2rem;
+            border-radius: 15px;
+            border:0.1rem solid #ccc;
+            outline: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-family: 'Lato', sans-serif;
+            box-shadow: var(--shadow);
+            background: rgba(0, 0, 0,0.85);
+            color: #fff;
+        }
+
+        
+        .equals {
+            background: rgba(192, 57, 43,1.0)
+        }
+
+        @media(max-width:900px) {
+            .wrapper {
+                width: 50%;
+            }
+        }
+
+        @media(max-width:550px) {
+            .wrapper {
+                width: 60%;
+            }
+        }
+
+        @media(max-width:450px) {
+            .wrapper {
+                width: 70%;
+            }
+        }
+
+        @media(max-width:400px) {
+            .wrapper {
+                width: 80%;
+            }
+        }
+
+        @media(max-width:330px) {
+            .wrapper {
+                width: 90%;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <form name="form" class="form">
+            <input type="text" class="text-view" name="textview" value="">
+        </form>
+        <div class="btn-wrapper">
+            <input type="button" class="button" value="Clear" onclick="clean()">
+            <input type="button" class="button arrow" value="⬅" onclick="back()">
+            <input type="button" class="button" value="/" onclick="insert('/')">
+            <input type="button" class="button" value="*" onclick="insert('*')">
+
+            <input type="button" class="button" value="7" onclick="insert('7')">
+            <input type="button" class="button" value="8" onclick="insert('8')">
+            <input type="button" class="button" value="9" onclick="insert('9')">
+            <input type="button" class="button" value="-" onclick="insert('-')">
+
+            <input type="button" class="button" value="4" onclick="insert('4')">
+            <input type="button" class="button" value="5" onclick="insert('5')">
+            <input type="button" class="button" value="6" onclick="insert('6')">
+            <input type="button" class="button" value="+" onclick="insert('+')">
+
+            <input type="button" class="button" value="1" onclick="insert('1')">
+            <input type="button" class="button" value="2" onclick="insert('2')">
+            <input type="button" class="button" value="3" onclick="insert('3')">
+            <input type="button" class="button " value="." onclick="insert('.')">
+            
+            <input type="button" class="button zero" value="0" onclick="insert('0')">
+            <input type="button" class="button" value="(" onclick="insert('(')">
+            <input type="button" class="button" value=")" onclick="insert(')')">
+            <input type="button" class="button equals" value="=" onclick="result()">
+        </div>
+    </div>
+
+    <script>
+    
+        function insert(num) {
+            document.form.textview.value = document.form.textview.value + num;
+            console.log('I was fuckclicked!')
+            
+        }
+
+        function result() {
+            var res = document.form.textview.value;
+            
+            document.form.textview.value = eval(res);
+            
+        } 
+
+        function clean() {
+            document.form.textview.value = "";
+        } 
+
+        function back() {
+            document.form.textview.value = document.form.textview.value.substring(0, document.form.textview.value.length -1)
+        }  
+
+        
+    
+    
+    </script>
+    
+</body>
+</html>
