@@ -19,3 +19,11 @@ function back() {
     document.form.textview.value.length - 1
   );
 }
+
+function calculate() {
+  document.form.textview.value = "12";
+}
+
+function isDivisionByZero(denomenator) {
+  return parseInt(denomenator) === 0;
+}

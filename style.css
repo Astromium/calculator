@@ -111,3 +111,13 @@ body {
     padding: 0.7rem;
   }
 }
+
+@media (max-width: 230px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .wrapper .button {
+    padding: 0.2rem;
+  }
+}
