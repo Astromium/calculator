@@ -121,3 +121,16 @@ body {
     padding: 0.2rem;
   }
 }
+
+@media (max-width: 130px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .wrapper .button {
+    padding: 0.2rem;
+  }
+  .button {
+    background-color: red;
+  }
+}

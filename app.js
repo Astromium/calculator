@@ -27,3 +27,7 @@ function calculate() {
 function isDivisionByZero(denomenator) {
   return parseInt(denomenator) === 0;
 }
+
+function mult(a, b) {
+  return (a * b) % 10;
+}
